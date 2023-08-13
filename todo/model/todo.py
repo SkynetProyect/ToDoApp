@@ -50,7 +50,7 @@ class TodoBook:
 
     def completed_todos(self):
         _lista: list[Todo] = []
-        ''' Atributo completed con valor true, del diccionario todos, formar lista.'''
+        ''' Atributo completed con valor true de objeto todo, del diccionario todos, formar lista.'''
 
         for iterador in self.todos:
             if self.todos[iterador].completed:
@@ -66,15 +66,18 @@ class TodoBook:
         for iterador in temporal:
             for i in temporal[iterador].tags:
                 conteo: int = 0
-                for secundario in temporal:
-                    if temporal[iterador] == temporal[secundario]:
-                        pass
-                    else:
-                        for j in temporal[secundario].tags:
-                            if i == j:
-                                conteo += 1
-                            else:
-                                pass
+                if i not in diccionario:
+                    for secundario in temporal:
+                        if temporal[iterador] == temporal[secundario]:
+                            pass
+                        else:
+                            for j in temporal[secundario].tags:
+                                if i == j:
+                                    conteo += 1
+                                else:
+                                    pass
+                else:
+                    pass
                 diccionario[i] = conteo
             del temporal[iterador]
         return diccionario
