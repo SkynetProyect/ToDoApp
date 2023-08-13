@@ -34,7 +34,7 @@ class TodoBook:
     def add_todo(self, tittle: str, description: str):
         identificativo: int = len(self.todos) + 1
         objeto = Todo
-        self.todos[identificativo] = objeto  # diccionario["clave"] = valor
+        self.todos[identificativo] = objeto(identificativo, tittle, description)  # diccionario["clave"] = valor(_init_)
         return identificativo
 
     def pending_todos(self):
