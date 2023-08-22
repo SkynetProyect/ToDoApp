@@ -1,12 +1,12 @@
 class Todo:
-    completed: bool = False
-    tags: list[str, None]
 
     def __init__(self, code_int, tittle, description):
         """Este es el constructor que crea y recibe la informacion sobre la tarea/objeto Todo"""
         self.code_id: int = code_int
         self.tittle: str = tittle
         self.description: str = description
+        self.completed: bool = False
+        self.tags: list[str, None]
 
     def mark_completed(self):
         """Esta funcion marca como completdo el objeto Todo"""
